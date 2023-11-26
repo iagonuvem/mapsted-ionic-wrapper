@@ -14,7 +14,13 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>Just Click this button to call the Mapsted Native SDK</p>
+    <ion-button (click)="testPlugin()">Test</ion-button>
+
+    <p>echo() result: {{responseStr}}</p><br/>
+    <p>getBuildingInfo() result: {{responseStr}}</p>
+    <pre>
+      {{responseArr}}
+    </pre>
   </div>
 </ion-content>
