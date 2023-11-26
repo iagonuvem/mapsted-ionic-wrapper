@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep interface com.mapsted.** { *; }    
+-keep public class com.mapsted.** { public protected *; }
+-keep interface com.carto.** { *; }
+-keep public class com.carto.** { public protected *; }
