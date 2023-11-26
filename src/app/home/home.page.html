@@ -14,13 +14,22 @@
   </ion-header>
 
   <div id="container">
-    <p>Just Click this button to call the Mapsted Native SDK</p>
-    <ion-button (click)="testPlugin()">Test</ion-button>
+    <ion-item>
+      <ion-input label="Building ID" [(ngModel)]="buildingId" label-placement="floating" placeholder="Enter Building ID"></ion-input>
+    </ion-item>
+    <ion-label>Change the Building ID and click this button to call getBuildingInfo() from Native SDK</ion-label>
+    
+    <ion-button  size="large" expand="block" (click)="testPlugin()">Test</ion-button>
 
-    <p>echo() result: {{responseStr}}</p><br/>
-    <p>getBuildingInfo() result: {{responseStr}}</p>
-    <pre>
-      {{responseArr}}
-    </pre>
+    <ion-label>
+      <p>echo() result: {{responseStr}}</p>
+    </ion-label>
+
+    <ion-label>
+      <p>getBuildingInfo() result:</p>
+      <pre>
+        {{responseArr}}
+      </pre>
+    </ion-label>
   </div>
 </ion-content>

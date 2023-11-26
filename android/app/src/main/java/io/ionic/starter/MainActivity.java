@@ -1,19 +1,16 @@
 package io.ionic.starter;
 
-import io.ionic.starter.MapstedApplication;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+
+import com.mapsted.MapstedBaseApplication;
 import com.mapsted.positioning.CoreApi;
 import com.mapsted.positioning.CoreApi.LocationServicesCallback;
 import com.mapsted.positioning.MapstedCoreApiProvider;
 import com.mapsted.positioning.SdkError;
 import com.mapsted.positioning.SdkStatusUpdate;
 import com.mapsted.positioning.core.map_download.PropertyDownloadManager;
-import com.mapsted.positioning.core.models.internal.DownloadStatus;
 import com.mapsted.positioning.CoreParams;
-import com.mapsted.positioning.CoreParams.Builder;
 
 import java.util.Locale;
 import com.getcapacitor.BridgeActivity;
@@ -31,10 +28,9 @@ public class MainActivity extends BridgeActivity implements MapstedCoreApiProvid
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         registerPlugin(MapstedIonicPlugin.class);
+        coreApi = ((MapstedBaseApplication) getApplication()).getCoreApi(this);
 
         super.onCreate(savedInstanceState);
-
-        coreApi = ((MapstedApplication) getApplication()).getCoreApi(this);
 
         tActivityStart = System.currentTimeMillis();
 
