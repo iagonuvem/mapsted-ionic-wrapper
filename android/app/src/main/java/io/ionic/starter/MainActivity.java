@@ -30,6 +30,8 @@ public class MainActivity extends BridgeActivity implements MapstedCoreApiProvid
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        registerPlugin(MapstedIonicPlugin.class);
+
         super.onCreate(savedInstanceState);
 
         coreApi = ((MapstedApplication) getApplication()).getCoreApi(this);
